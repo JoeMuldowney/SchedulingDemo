@@ -22,4 +22,4 @@ USER appuser
 EXPOSE 8000
 
 # Run with Gunicorn (production WSGI server)
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app", "--workers=1", "--timeout=120", "--worker-tmp-dir", "/tmp"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app", "--workers=1", "--timeout=120", "--worker-tmp-dir", "/tmp"]

@@ -5,7 +5,7 @@ services:
     build: .
     container_name: scheduling_demo
     expose:
-      - "8000"
+      - "5000"
 
   nginx:
     image: nginx:latest
