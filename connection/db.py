@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, time
 
 
 def get_connection():
-    conn = sqlite3.connect("timewise.db")
+    conn = sqlite3.connect("/app/connection/timewise.db")
     conn.row_factory = sqlite3.Row  # 👈 magic line
     return conn
 
