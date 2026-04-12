@@ -40,7 +40,7 @@ Note: This is a demo project built for freelance portfolio purposes and is not c
 
 1. Clone the repository:
 
- - git clone https://github.com/joemuldowney/appointment-demo.git
+ - git clone git@github.com:JoeMuldowney/SchedulingDemo.git
 
 2. Install dependencies:
  - pip install -r requirements.txt
