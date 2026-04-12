@@ -3,6 +3,9 @@ FROM python:3.11-slim
 # Create non-root user (important for production security)
 RUN useradd -m appuser
 
+RUN mkdir -p /app/data \
+ && chown -R appuser:appuser /app
+
 WORKDIR /app
 
 # Install dependencies
@@ -19,4 +22,4 @@ USER appuser
 EXPOSE 8000
 
 # Run with Gunicorn (production WSGI server)
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app", "--workers=3", "--timeout=120"]
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app", "--workers=1", "--timeout=120"]

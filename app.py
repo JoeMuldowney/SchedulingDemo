@@ -8,7 +8,7 @@ def create_app():
 
     # Initialize DB
     init_db()
-    seed_slots()
+    # seed_slots()
 
     @app.route('/')
     def index():
