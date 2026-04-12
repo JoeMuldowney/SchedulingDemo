@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZenFit Yoga Studio</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div>ZenFit Yoga
+
+  </div>
+  <div class="hamburger" onclick="toggleSidebar()">
+    <span></span><span></span><span></span>
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <a href="#about">About</a>
+  <a href="#team">Team</a>
+  <a href="#classes">Classes</a>
+  <a href="#media">Media</a>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+<!-- HERO -->
+<div class="hero">
+<h1>Find Your Balance</h1>
+<h3><span id="changing-word">Strength</span></h3>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About</h2>
+
+  <p>
+    ZenFit is a modern yoga and fitness studio focused on building strength, flexibility, and mindfulness in a supportive environment.
+  </p>
+
+  <p>
+    Our classes are designed for all levels, from complete beginners to experienced athletes.
+  </p>
+  <p>Every session is guided by passionate instructors who prioritize form, balance, and personal progress.</p>
+  <p>
+    Whether your goal is to improve mobility, reduce stress, or build strength, ZenFit provides a welcoming space where you can move, breathe, and grow.
+  </p>
+</section>
+
+<!-- CLASSES -->
+<section id="team">
+  <h2>ZenFit Team</h2>
+
+  <div class="cards">
+    <div class="card">
+      <img src="{{ url_for('static', filename='images/yoga_profile.jpeg') }}">
+      <div class="card-content">
+        <h3>Jenny Carter</h3>
+        <h5>Owner • Morning Yoga Instructor</h5>
+
+        <p>
+          Jenny founded ZenFit with the mission of making yoga accessible, welcoming, and transformative for everyone. She specializes in flow-based morning sessions that focus on breath, alignment, and mental clarity.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="{{ url_for('static', filename='images/hiit_profile.webp') }}">
+      <div class="card-content">
+        <h3>Mary Thompson</h3>
+        <h5>HIIT & Strength Coach</h5>
+
+        <p>
+          Mary brings high-energy training to ZenFit with a focus on strength, endurance, and functional movement. Her HIIT classes are designed to challenge all levels while keeping sessions motivating and fun.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLASSES -->
+<section id="classes">
+  <h2>Classes</h2>
+
+  <div class="cards">
+    <div class="card">
+      <img src="{{ url_for('static', filename='images/workout.jpg') }}">
+      <div class="card-content">
+        <h3>Morning Yoga</h3>
+        <button class="book-btn" data-class="Morning Yoga">Book</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="{{ url_for('static', filename='images/hiit.jpg') }}">
+      <div class="card-content">
+        <h3>HIIT Blast</h3>
+        <button class="book-btn" data-class="HIIT Blast">Book</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="popup" id="popup">
+  <div class="popup-content">
+
+    <div class="popup-header">
+      <h2 id="popup-title"></h2>
+      <span onclick="closePopup()" class="close-btn">×</span>
+    </div>
+
+    <!-- NAV -->
+    <div class="popup-nav">
+      <button id="prev-day">◀</button>
+      <span id="current-date"></span>
+      <button id="next-day">▶</button>
+    </div>
+
+    <div id="time-slots"></div>
+
+
+    <div class="popup-footer">
+      <p id="selected-slot">No slot selected</p>
+      <button id="confirm-btn" class="confirm-btn" disabled>
+        Confirm Booking
+      </button>
+    </div>
+
+    <div id="success-message" style="display:none; text-align:center; padding:20px;">
+  <h2 style="color:#198754;">🎉 Thank You!</h2>
+  <p>Your class has been booked successfully.</p>
+</div>
+
+  </div>
+</div>
+
+<section id="media">
+  <h2>Follow Us</h2>
+  <p>Stay connected and follow ZenFit Yoga on social media</p>
+
+  <div class="social-container">
+    <div class="social-card">
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="text-white"><span><img src="{{ url_for('static', filename='images/instagram.svg') }}" alt="Instagram" width="24" height="24"></span></a>
+    </div>
+<div class="social-card">
+   <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="text-white"><span><img src="{{ url_for('static', filename='images/facebook.svg') }}" alt="Facebook" width="24" height="24"></span></a>
+</div>
+
+<div class="social-card">
+    <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="text-white"><span><img src="{{ url_for('static', filename='images/tiktok.svg') }}" alt="Instagram" width="24" height="24"></span></a>
+</div>
+<div class="social-card">
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="text-white"><span><img src="{{ url_for('static', filename='images/youtube.svg') }}" alt="Instagram" width="24" height="24"></span></a>
+</div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  © 2026 ZenFit Yoga Studio
+</footer>
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script>
+
+
+function toggleSidebar() {
+  document.getElementById("sidebar").classList.toggle("show");
+  document.getElementById("overlay").classList.toggle("show");
+}
+
+function closeSidebar() {
+  document.getElementById("sidebar").classList.remove("show");
+  document.getElementById("overlay").classList.remove("show");
+}
+
+
+</script>
+
+</body>
+</html>
