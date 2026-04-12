@@ -19,7 +19,7 @@ COPY . .
 RUN chown -R appuser:appuser /app
 USER appuser
 
-EXPOSE 8000
+EXPOSE 5000
 
 # Run with Gunicorn (production WSGI server)
 CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app", "--workers=1", "--timeout=120", "--worker-tmp-dir", "/tmp"]
