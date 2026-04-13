@@ -3,7 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZenFit Yoga Studio</title>
+    <!-- common SEO -->
+<title>ZenFit Yoga Studio | Yoga & HIIT Classes for All Levels</title>
+<meta name="description" content="ZenFit Yoga Studio offers yoga, HIIT, and fitness classes for all levels. Build strength, flexibility, and mindfulness in a welcoming space.">
+<meta name="keywords" content="yoga, HIIT, fitness, yoga studio, strength training, mindfulness">
+<meta name="author" content="ZenFit Yoga Studio">
+    <!-- social media -->
+<meta property="og:title" content="ZenFit Yoga Studio">
+<meta property="og:description" content="Yoga and HIIT classes for all levels. Build strength, flexibility, and mindfulness.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ url_for('static', filename='images/preview.webp') }}">
+<meta property="og:url" content="https://joemuldowneydemos-timewise.com">
+   <!-- twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ZenFit Yoga Studio">
+<meta name="twitter:description" content="Yoga and HIIT classes for all levels.">
+<meta name="twitter:image" content="{{ url_for('static', filename='images/preview.webp') }}">
+
+<link rel="icon" href="/static/images/favicon.ico">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
@@ -59,7 +76,17 @@
 
   <div class="cards">
     <div class="card">
-      <img src="{{ url_for('static', filename='images/yoga_profile.jpeg') }}">
+      <img
+  src="{{ url_for('static', filename='images/yoga_profile-500.webp') }}"
+  srcset="
+    {{ url_for('static', filename='images/yoga_profile-500.webp') }} 500w,
+    {{ url_for('static', filename='images/yoga_profile-1000.webp') }} 1000w,
+    {{ url_for('static', filename='images/yoga_profile-1500.webp') }} 1500w
+  "
+  sizes="(max-width: 600px) 100vw, 300px"
+  alt="Jenny Carter yoga instructor portrait"
+  class="card-img"
+>
       <div class="card-content">
         <h3>Jenny Carter</h3>
         <h5>Owner • Morning Yoga Instructor</h5>
@@ -71,7 +98,17 @@
     </div>
 
     <div class="card">
-      <img src="{{ url_for('static', filename='images/hiit_profile.webp') }}">
+      <img
+  src="{{ url_for('static', filename='images/hiit_profile-500.webp') }}"
+  srcset="
+    {{ url_for('static', filename='images/hiit_profile-500.webp') }} 500w,
+    {{ url_for('static', filename='images/hiit_profile-1000.webp') }} 1000w,
+    {{ url_for('static', filename='images/hiit_profile-1500.webp') }} 1500w
+  "
+  sizes="(max-width: 600px) 100vw, 300px"
+  alt="HIIT instructor profile"
+  class="card-img"
+>
       <div class="card-content">
         <h3>Mary Thompson</h3>
         <h5>HIIT & Strength Coach</h5>
@@ -90,7 +127,17 @@
 
   <div class="cards">
     <div class="card">
-      <img src="{{ url_for('static', filename='images/workout.jpg') }}">
+      <img
+  src="{{ url_for('static', filename='images/workout-500.webp') }}"
+  srcset="
+    {{ url_for('static', filename='images/workout-500.webp') }} 500w,
+    {{ url_for('static', filename='images/workout-1000.webp') }} 1000w,
+    {{ url_for('static', filename='images/workout-1500.webp') }} 1500w
+  "
+  sizes="(max-width: 600px) 100vw, 300px"
+  alt="Workout training session"
+  class="card-img"
+>
       <div class="card-content">
         <h3>Morning Yoga</h3>
         <button class="book-btn" data-class="Morning Yoga">Book</button>
@@ -98,7 +145,17 @@
     </div>
 
     <div class="card">
-      <img src="{{ url_for('static', filename='images/hiit.jpg') }}">
+      <img
+  src="{{ url_for('static', filename='images/hiit-500.webp') }}"
+  srcset="
+    {{ url_for('static', filename='images/hiit-500.webp') }} 500w,
+    {{ url_for('static', filename='images/hiit-1000.webp') }} 1000w,
+    {{ url_for('static', filename='images/hiit-1500.webp') }} 1500w
+  "
+  sizes="(max-width: 600px) 100vw, 300px"
+  alt="HIIT workout session"
+  class="card-img"
+>
       <div class="card-content">
         <h3>HIIT Blast</h3>
         <button class="book-btn" data-class="HIIT Blast">Book</button>
@@ -156,7 +213,7 @@
     <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="text-white"><span><img src="{{ url_for('static', filename='images/tiktok.svg') }}" alt="Instagram" width="24" height="24"></span></a>
 </div>
 <div class="social-card">
-    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="text-white"><span><img src="{{ url_for('static', filename='images/youtube.svg') }}" alt="Instagram" width="24" height="24"></span></a>
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="text-white"><span><img src="{{ url_for('static', filename='images/youtube.svg') }}" alt="Youtube" width="24" height="24"></span></a>
 </div>
   </div>
 </section>
