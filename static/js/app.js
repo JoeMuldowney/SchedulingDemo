@@ -6,9 +6,7 @@ async function bookSlot(slotId) {
         });
 
         const data = await res.json();
-        alert(data.message || "Booked!");
-
-        loadAppointments(); // refresh list
+        console.log("Booked!");
 
     } catch (err) {
         console.error("Booking failed:", err);
@@ -20,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(res => res.json())
         .then(data => {
             console.log("Slots:", data);
-            alert("Loaded " + data.length + " slots");
+
         });
 
 });
@@ -116,7 +114,7 @@ document.getElementById("next-day").addEventListener("click", () => {
 document.getElementById("confirm-btn").addEventListener("click", () => {
 
     if (!selectedSlot) return;
-
+    bookSlot(selectedSlot.id);
     // hide booking UI
     document.querySelector(".popup-nav").style.display = "none";
     document.getElementById("time-slots").style.display = "none";
@@ -169,7 +167,7 @@ el.classList.add("show");
 setInterval(changeWord, 2500);
 
 
-// close side bar
+// close sidebar
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".sidebar a").forEach(link => {
     link.addEventListener("click", closeSidebar);

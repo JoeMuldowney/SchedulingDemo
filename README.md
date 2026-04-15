@@ -46,7 +46,7 @@ Note: This is a demo project built for freelance portfolio purposes and is not c
  - pip install -r requirements.txt
 
 3. Run the server:
- - python app.py
+ - python3 -m app
 
 4. Enter url in browser:
  - http://127.0.0.1:5000

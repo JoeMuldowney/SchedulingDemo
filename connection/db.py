@@ -6,6 +6,7 @@ from datetime import datetime, timedelta, time
 
 def get_connection():
     conn = sqlite3.connect("/app/data/timewise.db")
+    # conn = sqlite3.connect("timewise.db")
     conn.row_factory = sqlite3.Row  # 👈 magic line
     return conn
 
@@ -27,15 +28,15 @@ def init_db():
     conn.commit()
     conn.close()
 
-
+# init values in the appointment table
 def seed_slots():
     conn = get_connection()
     cursor = conn.cursor()
 
     cursor.execute("DELETE FROM time_slots")
 
-    start_hour = 9
-    end_hour = 17
+    start_hour = 6
+    end_hour = 12
     slot_minutes = 60
 
     base_date = datetime.now().date()

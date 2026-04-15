@@ -20,7 +20,10 @@
 <meta name="twitter:description" content="Yoga and HIIT classes for all levels.">
 <meta name="twitter:image" content="{{ url_for('static', filename='images/preview.webp') }}">
 
-<link rel="icon" href="/static/images/favicon.ico">
+<link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
+
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
