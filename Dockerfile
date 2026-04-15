@@ -15,8 +15,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy app code
 COPY . .
 
-# Change ownership to non-root user
-RUN chown -R appuser:appuser /app
+# 🔥 OpenShift-safe permissions to write to sqlite db
+RUN mkdir -p /app/data \
+ && chgrp -R 0 /app \
+ && chmod -R g=u /app
 USER appuser
 
 EXPOSE 5000
