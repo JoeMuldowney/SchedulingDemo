@@ -16,12 +16,12 @@ body {
   top: 0;
   width: 100%;
   height: 60px;
-  background: #F0F9FF;
+  background-color: #075985;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  color: #0EA5E9;
+  color: white;
   z-index: 1000;
 }
 
@@ -31,13 +31,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  color: #0EA5E9;
+  color: white;
 }
 
 .hamburger span {
   width: 25px;
   height: 3px;
-  background-color: #0EA5E9;
+  background-color: white;
 }
 .hamburger:hover {
   transform: scale(1.05);
@@ -50,7 +50,7 @@ body {
   right: -260px;
   width: 260px;
   height: 100%;
-  background: #F0F9FF;
+  background: #075985;
   display: flex;
   flex-direction: column;
   padding-top: 70px;
@@ -64,7 +64,7 @@ body {
 }
 
 .sidebar a {
-  color: #0EA5E9;
+  color: white;
   padding: 15px;
   text-decoration: none;
   border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -93,7 +93,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #10B981;
+  color: #166534
 }
 
 #changing-word {
@@ -112,7 +112,7 @@ section {
 
 h2 {
   text-align: center;
-  color: #10B981;
+  color: #166534;
   margin-bottom: 50px;
 }
 
